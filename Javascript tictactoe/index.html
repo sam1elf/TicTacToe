@@ -1,62 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script type="text/javascript" src="functions.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+    </style>
     <title>TicTacToe</title>
   </head>
-  <body class="bg-dark">
+  <body class="bg-dark" style="font-family: 'Montserrat', sans-serif; font-size: 1.4em;">
 
+    <!-- Image -->
     <div class="container mb-5">
       <div class="row">
         <img src="media/tic-tac-toe.png" class="mx-auto" alt="TicTacToe" />
       </div>
     </div>
-    
-    <!-- Gameboard -->
     <div class="container">
-      <div class="row">
-        <div class="mx-auto">
-          <div class="row">
-            <div class="col-md-4">
-              <a id="button1" class="bg-secondary pt-3 pb-3 pl-4 pr-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
-              <a id="button2" class="bg-light pt-3 pb-3 pl-4 pr-3 mx-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
-              <a id="button3" class="bg-success pt-3 pb-3 pl-4 pr-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <a id="button4" class="bg-secondary pt-3 pb-3 pl-4 pr-3 my-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
-              <a id="button5" class="bg-light pt-3 pb-3 pl-4 pr-3 mx-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
-              <a id="button6" class="bg-success pt-3 pb-3 pl-4 pr-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <a id="button7" class="bg-secondary pt-3 pb-3 pl-4 pr-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
-              <a id="button8" class="bg-light pt-3 pb-3 pl-4 pr-3 mx-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
-              <a id="button9" class="bg-success pt-3 pb-3 pl-4 pr-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
-            </div>
-          </div>
-        </div>
+
+      <!-- Gameboard -->
+      <div class="row h-100 justify-content-center align-items-center">
+        <a id="button1" class="bg-secondary pt-3 pb-3 pl-4 pr-3  d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
+        <a id="button2" class="bg-light pt-3 pb-3 pl-4 pr-3 mx-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
+        <a id="button3" class="bg-success pt-3 pb-3 pl-4 pr-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
       </div>
-      <div class="row">
-        <p class="mx-auto mt-5 text-info">Current Player: <span id="currPlay">O</span></p>
-        <p class="mx-auto mt-5 text-info float-right"><span id="output"></span></p>
-        
+
+      <div class="row h-100 justify-content-center align-items-center">
+        <a id="button4" class="bg-secondary pt-3 pb-3 pl-4 pr-3 my-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
+        <a id="button5" class="bg-light pt-3 pb-3 pl-4 pr-3 mx-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
+        <a id="button6" class="bg-success pt-3 pb-3 pl-4 pr-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
       </div>
+
+      <div class="row h-100 justify-content-center align-items-center">
+        <a id="button7" class="bg-secondary pt-3 pb-3 pl-4 pr-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
+        <a id="button8" class="bg-light pt-3 pb-3 pl-4 pr-3 mx-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
+        <a id="button9" class="bg-success pt-3 pb-3 pl-4 pr-3 d-inline-block" style="width: 60px; height: 60px;" onclick="tilePressed(this.id);">--</a>
+      </div>
+      
+      <!-- Output text -->
+      <div class="row">
+        <p class="mx-auto mt-5 text-info"><span id="output">Current Player: O</span></p>
+      </div>
+
+      <!-- Replay button -->
       <div class="row">
         <button class="btn-lg btn-success mx-auto invisible" type="button" id="playAgain" onclick="playAgain();">Play again!</button>
       </div>
-
+  
     </div>
-    
-
-    
-
-
+    <!-- Jquery Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
