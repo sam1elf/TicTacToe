@@ -1,3 +1,6 @@
+// TicTacToe by Samuel Walter
+// Made for dotSource GmbH
+
 var currentPlayer = "O";
 var winner = "";
 counter = 0;
